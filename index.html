@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rooted — Grow literal roots in worldly places</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4efe6;
+    --dark-green: #1a2e1a;
+    --mid-green: #2d4a2d;
+    --sage: #5a7a5a;
+    --light-sage: #a8bfa8;
+    --warm-white: #faf7f2;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    background: var(--cream);
+    color: var(--dark-green);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.4;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    position: relative;
+  }
+
+  /* Subtle radial glow */
+  .page::after {
+    content: '';
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(90,122,90,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Wordmark */
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.1s;
+  }
+
+  /* Tree SVG */
+  .tree-wrap {
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards 0.3s;
+  }
+
+  /* Headline */
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    line-height: 1.2;
+    color: var(--dark-green);
+    margin-bottom: 1.75rem;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards 0.5s;
+  }
+
+  .headline em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--mid-green);
+  }
+
+  /* Body */
+  .body-text {
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    line-height: 1.8;
+    color: var(--sage);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards 0.7s;
+  }
+
+  /* Divider */
+  .divider {
+    width: 32px;
+    height: 1px;
+    background: var(--light-sage);
+    margin: 0 auto 3rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.8s;
+  }
+
+  /* CTA */
+  .cta-wrap {
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards 0.9s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: var(--dark-green);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.08);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .cta-btn:hover {
+    background: var(--mid-green);
+    transform: translateY(-1px);
+  }
+
+  .cta-btn:hover::after {
+    opacity: 1;
+  }
+
+  .cta-note {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--light-sage);
+    text-transform: uppercase;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 5rem;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--light-sage);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 1.2s;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .page { padding: 2.5rem 1.5rem; }
+    .headline { font-size: 2rem; }
+    .wordmark { margin-bottom: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="container">
+
+    <div class="wordmark">Rooted</div>
+
+    <div class="tree-wrap">
+      <svg width="40" height="52" viewBox="0 0 40 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 3 C20 3 7 13 7 24 C7 32 12 37 20 37 C28 37 33 32 33 24 C33 13 20 3 20 3Z" stroke="#2d4a2d" stroke-width="1.2" fill="none"/>
+        <path d="M20 37 L20 51" stroke="#2d4a2d" stroke-width="1.2"/>
+        <path d="M20 28 C16 24 10 25 8 27" stroke="#2d4a2d" stroke-width="0.8" fill="none"/>
+        <path d="M20 20 C24 16 30 17 32 20" stroke="#2d4a2d" stroke-width="0.8" fill="none"/>
+        <path d="M20 37 C17 34 13 35 12 37" stroke="#2d4a2d" stroke-width="0.7" fill="none"/>
+      </svg>
+    </div>
+
+    <h1 class="headline">
+      Your commute. Your steps.<br>
+      Your spending.<br>
+      All of it grows <em>literal roots</em><br>
+      in worldly places.
+    </h1>
+
+    <div class="divider"></div>
+
+    <p class="body-text">
+      Rooted is coming to London.<br>
+      Be among the first to know when it does.
+    </p>
+
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://tally.so/r/lbMQVv" target="_blank">
+        Join the waitlist
+      </a>
+      <span class="cta-note">London early access · No spam</span>
+    </div>
+
+    <div class="footer">
+      A research pilot · London · 2026
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
