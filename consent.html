@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rooted — Participant Information & Consent</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4efe6;
+    --dark-green: #1a2e1a;
+    --mid-green: #2d4a2d;
+    --sage: #5a7a5a;
+    --light-sage: #a8bfa8;
+    --warm-white: #faf7f2;
+    --border: rgba(90,122,90,0.2);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--dark-green);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.4;
+  }
+
+  header {
+    border-bottom: 0.5px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.15em;
+    color: var(--mid-green);
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .doc-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .doc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    line-height: 1.25;
+    color: var(--dark-green);
+    margin-bottom: 0.75rem;
+  }
+
+  .doc-meta {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-sage);
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section:nth-child(5) { animation-delay: 0.5s; }
+  .section:nth-child(6) { animation-delay: 0.6s; }
+  .section:nth-child(7) { animation-delay: 0.7s; }
+  .section:nth-child(8) { animation-delay: 0.8s; }
+
+  .section-number {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--light-sage);
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    color: var(--mid-green);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .section-body {
+    font-size: 14.5px;
+    color: #3a4a3a;
+    line-height: 1.85;
+  }
+
+  .section-body ul {
+    list-style: none;
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .section-body ul li {
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .section-body ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--light-sage);
+    font-weight: 300;
+  }
+
+  .section-body strong {
+    font-weight: 400;
+    color: var(--dark-green);
+  }
+
+  .divider {
+    width: 32px;
+    height: 0.75px;
+    background: var(--light-sage);
+    margin: 2.5rem 0;
+  }
+
+  .contact-block {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .contact-block p {
+    font-size: 14px;
+    color: var(--sage);
+    line-height: 1.9;
+  }
+
+  .contact-block a {
+    color: var(--mid-green);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--light-sage);
+  }
+
+  .contact-block a:hover {
+    border-bottom-color: var(--mid-green);
+  }
+
+  .highlight-box {
+    background: rgba(168, 191, 168, 0.15);
+    border-left: 2px solid var(--light-sage);
+    padding: 1rem 1.25rem;
+    margin-top: 0.75rem;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    color: var(--sage);
+    font-style: italic;
+  }
+
+  footer {
+    border-top: 0.5px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  footer a {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--sage);
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: var(--mid-green);
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 2.5rem 1.25rem 4rem; }
+    header { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="wordmark" href="/">Rooted</a>
+</header>
+
+<div class="page">
+
+  <div class="doc-header">
+    <h1 class="doc-title">Participant Information<br>& Consent</h1>
+    <p class="doc-meta">Rooted Alpha Pilot · Last updated May 2026</p>
+  </div>
+
+  <div class="section">
+    <div class="section-number">1</div>
+    <div class="section-title">Who we are</div>
+    <div class="section-body">
+      Rooted is an independent research project founded by Jenny Yiqing Zhao, currently in pre-product development. This pilot is conducted solely for research purposes and is not affiliated with any regulated financial institution.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">2</div>
+    <div class="section-title">This is a simulated prototype</div>
+    <div class="section-body">
+      This 30-day pilot ("the Alpha") is strictly an early-stage market research exercise. There are no real financial transactions, no money is accepted, and we will never ask for your bank or card details. All balances, spending logs, and activity data are entirely simulated.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">3</div>
+    <div class="section-title">Not a financial product (FCA disclaimer)</div>
+    <div class="section-body">
+      Rooted is a research project, not a bank or regulated financial institution. This Alpha is not regulated by the Financial Conduct Authority (FCA) of the United Kingdom. No part of this simulation constitutes financial advice, a financial promotion, or an offer of regulated payment services.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">4</div>
+    <div class="section-title">Simulated features & placeholder content</div>
+    <div class="section-body">
+      To demonstrate how Rooted will work at scale, this prototype uses the following placeholder content:
+      <ul>
+        <li><strong>Energy balances</strong> are manually assigned by the research team and carry no real-world monetary value</li>
+        <li><strong>Friend profiles</strong> in the Grove feature are pre-populated placeholders to simulate the social and co-planting experience. They do not represent real users</li>
+        <li><strong>Partner brand activations</strong> are illustrative and do not represent live commercial agreements</li>
+        <li><strong>Environmental and forest content</strong> — including mapping and video — is used for illustrative purposes only, and may include third-party material such as content from Ecosia. This does not imply Rooted ownership of or involvement in those specific projects</li>
+        <li><strong>No trees are planted</strong> during this pilot. Reforestation is the intended outcome of the live product, not this research prototype</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">5</div>
+    <div class="section-title">Your data (UK GDPR)</div>
+    <div class="section-body">
+      We collect only your name, email address, and in-app activity — including login timestamps, feature interactions, and check-in responses — to conduct this research. Your data is strictly confidential, will never be sold or shared with any third party, and will be retained until the official product launch or a maximum of 3 years from the date of this pilot, whichever comes first. You may request deletion at any time by contacting us.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">6</div>
+    <div class="section-title">Your pilot energy carries over</div>
+    <div class="section-body">
+      The energy balance you accumulate during this pilot will be carried over to your official Rooted account when the product launches, provided you register with the same email address. This is our way of recognising your contribution as a founding member of the Rooted community.
+      <div class="highlight-box">
+        This is our current intention. We cannot guarantee this transfer in the event of a material change to the product or business model.
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">7</div>
+    <div class="section-title">Your rights</div>
+    <div class="section-body">
+      You can withdraw from the pilot at any time without consequence. On withdrawal, your in-app data will be deleted within 7 days upon request. Your right to withdraw does not affect anything already collected prior to withdrawal.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">8</div>
+    <div class="section-title">Contact</div>
+    <div class="section-body">
+      For any questions about this pilot or your data:
+      <div class="contact-block">
+        <p>
+          Jenny Yiqing Zhao<br>
+          Rooted — Independent Research Project<br>
+          London, UK<br>
+          <a href="mailto:yiqing.j.zhao@gmail.com">yiqing.j.zhao@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="/">← Back to Rooted</a>
+</footer>
+
+</body>
+</html>
