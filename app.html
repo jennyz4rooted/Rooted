@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Rooted</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F4EFE6;
+      --green: #2D4A2D;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow: hidden;
+    }
+
+    .desktop-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      gap: 20px;
+    }
+
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      letter-spacing: 0.3em;
+      color: var(--green);
+      text-transform: uppercase;
+    }
+
+    .phone {
+      position: relative;
+      width: 375px;
+      height: 720px;
+      background: var(--green);
+      border-radius: 44px;
+      padding: 12px;
+      box-shadow:
+        0 0 0 1px rgba(45,74,45,0.15),
+        0 40px 80px rgba(45,74,45,0.22),
+        inset 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .phone::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 5px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 3px;
+      z-index: 10;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 34px;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    .screen-tree {
+      font-size: 52px;
+      line-height: 1;
+    }
+
+    .screen-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--green);
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    .screen-sub {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--green);
+      opacity: 0.6;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+    }
+
+    .open-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 14px 36px;
+      background: var(--green);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: opacity 0.2s;
+    }
+
+    .open-btn:hover { opacity: 0.8; }
+
+    .tagline {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--green);
+      opacity: 0.4;
+      text-transform: uppercase;
+    }
+
+    /* Mobile: show loading then redirect via JS */
+    .mobile-loading {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      gap: 20px;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .mobile-loading .screen-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      color: var(--green);
+    }
+
+    .mobile-loading .screen-sub {
+      font-size: 13px;
+      color: var(--green);
+      opacity: 0.55;
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 500px) {
+      .desktop-frame { display: none; }
+      .mobile-loading { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE: shows briefly then redirects -->
+  <div class="mobile-loading">
+    <div class="screen-tree">🌱</div>
+    <div class="screen-title">Rooted</div>
+    <div class="screen-sub">Opening your app&hellip;</div>
+  </div>
+
+  <!-- DESKTOP: phone mockup with button -->
+  <div class="desktop-frame">
+    <span class="wordmark">Rooted</span>
+    <div class="phone">
+      <div class="phone-screen">
+        <div class="screen-tree">🌱</div>
+        <div class="screen-title">Grow a real,<br>geolocated tree</div>
+        <div class="screen-sub">Daily commutes, steps and<br>spending earn credits that<br>cultivate a tree over 12+ months.</div>
+        <a class="open-btn" href="https://rooted-50826.bubbleapps.io/" target="_blank">Open App</a>
+      </div>
+    </div>
+    <span class="tagline">The tree is the whole point</span>
+  </div>
+
+  <script>
+    // On mobile, redirect to the Bubble app after a brief moment
+    if (window.innerWidth <= 500) {
+      setTimeout(function() {
+        window.location.href = 'https://rooted-50826.bubbleapps.io/';
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>
