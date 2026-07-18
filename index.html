@@ -71,11 +71,11 @@
       text-align: center;
     }
     .hero-logo {
-      width: 160px;
-      height: 160px;
+      mix-blend-mode: multiply;
+      width: 240px;
+      height: 240px;
       object-fit: contain;
       margin-bottom: 40px;
-      opacity: 0.88;
     }
     .hero-h1 {
       font-family: var(--fd);
@@ -97,12 +97,12 @@
     .hero-actions {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 16px;
       flex-wrap: wrap;
       justify-content: center;
     }
     .btn-dark {
-      padding: 14px 38px;
+      padding: 14px 32px;
       background: var(--green);
       color: var(--cream);
       font-size: 12px;
@@ -113,7 +113,7 @@
     }
     .btn-dark:hover { opacity: 0.75; }
     .btn-outline {
-      padding: 13px 32px;
+      padding: 13px 28px;
       border: 1px solid var(--green);
       color: var(--green);
       font-size: 12px;
@@ -123,14 +123,6 @@
       transition: opacity 0.2s;
     }
     .btn-outline:hover { opacity: 0.55; }
-    .btn-text {
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      opacity: 0.55;
-      transition: opacity 0.2s;
-    }
-    .btn-text:hover { opacity: 1; }
 
     /* HOW */
     .how {
@@ -209,18 +201,19 @@
       padding: 100px 48px;
       text-align: center;
     }
-    .stats-intro {
-      font-size: 14px;
-      opacity: 0.5;
-      letter-spacing: 0.06em;
+    .stats-since {
+      font-size: 13px;
+      opacity: 0.4;
+      letter-spacing: 0.1em;
       margin-top: -40px;
       margin-bottom: 56px;
+      text-transform: uppercase;
     }
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
-      max-width: 480px;
+      max-width: 400px;
       margin: 48px auto 0;
     }
     .stat-n {
@@ -263,7 +256,7 @@
     }
     .btn-ig:hover { opacity: 1; }
 
-    /* ABOUT / FOUNDER */
+    /* FOUNDER */
     .founder {
       padding: 100px 48px;
       background: var(--pale);
@@ -288,20 +281,24 @@
       letter-spacing: 0.28em;
       text-transform: uppercase;
       opacity: 0.45;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
-    .founder-message {
+    .founder-message p {
       font-family: var(--fd);
-      font-size: clamp(18px, 2.5vw, 24px);
+      font-size: clamp(17px, 2.2vw, 22px);
       font-weight: 400;
-      line-height: 1.65;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+    .founder-message p:last-of-type {
       margin-bottom: 28px;
     }
     .founder-name {
       font-size: 12px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      opacity: 0.45;
+      opacity: 0.4;
     }
 
     /* CTA */
@@ -364,18 +361,19 @@
     /* MOBILE */
     @media (max-width: 768px) {
       .nav { padding: 18px 20px; }
+      .hero-logo {
+      mix-blend-mode: multiply; width: 180px; height: 180px; }
       .how { padding: 80px 24px; }
       .how-grid { grid-template-columns: 1fr; gap: 44px; }
       .pullquote { padding: 80px 24px; }
       .stats { padding: 80px 24px; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .founder { padding: 80px 24px; }
       .founder-inner { grid-template-columns: 1fr; gap: 40px; }
       .founder-photo { aspect-ratio: 1/1; }
       .cta-sec { padding: 80px 24px; }
       .footer { flex-direction: column; gap: 16px; padding: 36px 24px; }
       .footer-info { text-align: center; }
-      .hero-actions { flex-direction: column; gap: 16px; }
+      .hero-actions { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
@@ -389,13 +387,13 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-logo" src="IMG_3303.jpg" alt="Rooted" />
-    <h1 class="hero-h1">Your daily life,<br>growing something real.</h1>
-    <p class="hero-sub">Commutes, steps, and card spending earn credits that cultivate a real, geolocated tree over twelve months or more.</p>
+    <img class="hero-logo" src="logo.jpg" alt="Rooted" />
+    <h1 class="hero-h1">Your being, rooted in worldly places.</h1>
+    <p class="hero-sub">Your daily journeys, walking, and conscious spending grow a real, geolocated tree.</p>
     <div class="hero-actions">
       <a class="btn-dark" href="https://rooted-plum.vercel.app/app.html" target="_blank">Try the app</a>
       <a class="btn-outline" href="https://tally.so/r/lbMQVv" target="_blank">Join waitlist</a>
-      <a class="btn-text" href="https://www.youtube.com/shorts/ktAss8c38K4" target="_blank">Watch demo →</a>
+      <a class="btn-outline" href="https://www.youtube.com/shorts/ktAss8c38K4" target="_blank">Watch demo</a>
     </div>
   </section>
 
@@ -407,24 +405,24 @@
       <div class="how-card">
         <span class="how-glyph">🚶</span>
         <h3 class="how-name">Move</h3>
-        <p class="how-desc">TfL taps and daily steps earn credits automatically. Your commute counts toward something permanent.</p>
+        <p class="how-desc">TfL taps and walking earn credits that go toward planting a real, geolocated tree. Every journey counts.</p>
       </div>
       <div class="how-card">
         <span class="how-glyph">🛍</span>
         <h3 class="how-name">Spend consciously</h3>
-        <p class="how-desc">Card spending at ethical, B Corp certified brands earns credits toward your tree.</p>
+        <p class="how-desc">Every pound spent at our partner brands and organisations earns credits toward your tree. Not a pressure to spend more, just a quiet return on the choices you already make.</p>
       </div>
       <div class="how-card">
         <span class="how-glyph">🌿</span>
         <h3 class="how-name">Grow together</h3>
-        <p class="how-desc">Co-plant with friends in a Grove. Your tree grows faster. Theirs does too.</p>
+        <p class="how-desc">Friends and family pool credits to co-plant a tree together. Rooted in a real place, a shared memory of the people who grew it.</p>
       </div>
     </div>
   </section>
 
   <!-- PULL QUOTE -->
   <section class="pullquote">
-    <p class="pullquote-q">Not a token. Not an offset. A real tree, in the ground, tracked to its location.</p>
+    <p class="pullquote-q">Not a token. Not an offset. A real tree, taking root in the ground, growing on its own terms — another life, quietly bound to yours.</p>
     <p class="pullquote-tag">The tree is the whole point.</p>
   </section>
 
@@ -432,7 +430,7 @@
   <section class="stats">
     <p class="eyebrow">Pilot — London</p>
     <h2 class="section-h2">Rooted is live.</h2>
-    <p class="stats-intro">Since June 2026</p>
+    <p class="stats-since">Since June 2026</p>
     <div class="stats-grid">
       <div>
         <p class="stat-n">16</p>
@@ -443,12 +441,9 @@
         <p class="stat-l">On the waitlist</p>
       </div>
     </div>
-
     <div class="stats-ig">
-      <p class="stats-ig-text">I show up in London regularly to meet people in person — follow along to find out where, and watch this thing being built from zero.</p>
-      <a class="btn-ig" href="https://www.instagram.com/worldlyrooted/" target="_blank">
-        <span>Follow @worldlyrooted</span>
-      </a>
+      <p class="stats-ig-text">I am building Rooted in public. Follow on Instagram to watch the journey, catch me next time I pop up in London, and be part of what this becomes.</p>
+      <a class="btn-ig" href="https://www.instagram.com/worldlyrooted/" target="_blank">Follow @worldlyrooted</a>
     </div>
   </section>
 
@@ -458,9 +453,12 @@
       <img class="founder-photo" src="founder.jpg" alt="Jenny Zhao, founder of Rooted" />
       <div>
         <p class="founder-label">From the founder</p>
-        <p class="founder-message">
-          I started this at the end of April, in the middle of volunteer work for a climate and human rights organisation. I wanted to build something that made sustainability feel real — not a badge, not an offset, but something growing quietly alongside your daily life. This is that thing. Come be part of it from the beginning.
-        </p>
+        <div class="founder-message">
+          <p>Rooted didn't come from a startup idea or a market gap. When I planted my first tree in my actual hometown in Handan, while living in London as a migrant, that feeling of being anchored to both my past and the natural world broke something open.</p>
+          <p>A tree is a life, with a spirit, a story, and a name.</p>
+          <p>Not a number.</p>
+          <p>Rooted is my attempt to remember that. To put the tree back at the centre, and build a world where reforestation is something people carry with them every day.</p>
+        </div>
         <p class="founder-name">Yiqing (Jenny) Zhao · Founder, Rooted</p>
       </div>
     </div>
@@ -468,17 +466,15 @@
 
   <!-- CTA -->
   <section class="cta-sec">
-    <h2 class="cta-h2">Start growing something.</h2>
-    <p class="cta-sub">Join the waitlist. It takes thirty seconds.</p>
+    <h2 class="cta-h2">Be part of the movement.</h2>
+    <p class="cta-sub">Join the waitlist. It takes ten seconds.</p>
     <a class="btn-light" href="https://tally.so/r/lbMQVv" target="_blank">Join the waitlist →</a>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <span class="footer-logo">Rooted</span>
-    <div class="footer-info">
-      Rooted Technology Ltd · Incorporated June 2026
-    </div>
+    <div class="footer-info">Rooted Technology Ltd · Incorporated June 2026</div>
   </footer>
 
 </body>
