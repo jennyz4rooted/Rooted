@@ -152,6 +152,29 @@
     color: var(--dark-green);
   }
 
+  .section-body a {
+    color: var(--mid-green);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--light-sage);
+  }
+
+  .section-body a:hover {
+    border-bottom-color: var(--mid-green);
+  }
+
+  .subheading {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--dark-green);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-body > .subheading:first-child {
+    margin-top: 0;
+  }
+
   .divider {
     width: 32px;
     height: 0.75px;
@@ -247,9 +270,11 @@
 
   <div class="section">
     <div class="section-number">2</div>
-    <div class="section-title">Age requirement</div>
+    <div class="section-title">Age and how you agree</div>
     <div class="section-body">
-      Rooted is intended for users aged 18 and over. By using the app, you confirm that you are at least 18 years old.
+      Rooted is intended for users aged 18 and over.
+      <br><br>
+      When you sign up, you will be asked to tick a box to confirm that you have read this document, that you agree to it, and that you are 18 or over. Nothing is ticked for you. Some features are optional and have their own separate choice, set out in Section 7. We keep a record of which version of this document you agreed to, and when.
     </div>
   </div>
 
@@ -259,7 +284,11 @@
     <div class="section-number">3</div>
     <div class="section-title">What this is</div>
     <div class="section-body">
-      You're using a real, working version of the Rooted app with a small group of early testers, ahead of its public App Store launch. This is not a simulation — your account, your credits ("g"), and your activity are real. We intend for your account and activity to carry forward as the app develops, though in rare cases (such as a major technical migration) some data may need to be reset; if this ever happens, we will notify you directly beforehand.
+      You are using a real, working version of the Rooted app with a small group of early testers, ahead of its public App Store launch. It is delivered through Apple's TestFlight, which means it is a beta version. It may have bugs, may crash, and features may change or stop working, so please use it at your own risk and do not rely on it for anything important.
+      <br><br>
+      Your account, your credits ("g") and your activity are real, and we intend for them to carry forward as the app develops. In rare cases (such as a major technical migration or a beta build expiring) some data may need to be reset. If that happens, we will tell you beforehand where we can.
+      <br><br>
+      You are welcome to share the TestFlight link and tell friends about Rooted. Your use of TestFlight is also covered by Apple's own <a href="https://www.apple.com/legal/internet-services/testflight/" target="_blank" rel="noopener">TestFlight Terms of Service</a>.
     </div>
   </div>
 
@@ -279,7 +308,7 @@
     <div class="section-number">5</div>
     <div class="section-title">Tree planting and where things stand</div>
     <div class="section-body">
-      Rooted converts everyday habits into credits intended to fund real tree planting through ecological partners. We are actively working to confirm a live planting partner; until that partnership is operational, credits accumulate in your account but have not yet resulted in a physical tree being planted on your behalf. We'll update this document and notify users directly once real planting fulfilment begins.
+      Rooted converts everyday habits into credits intended to fund real tree planting through ecological partners. We are actively working to confirm a live planting partner. Until that partnership is operational, credits accumulate in your account but have not yet resulted in a physical tree being planted on your behalf. We will update this document and notify users directly once real planting fulfilment begins.
     </div>
   </div>
 
@@ -297,19 +326,21 @@
 
   <div class="section">
     <div class="section-number">7</div>
-    <div class="section-title">Your data</div>
+    <div class="section-title">Your choices</div>
     <div class="section-body">
-      We collect:
+      <div class="subheading">Required to use Rooted</div>
+      Your name, email address and in-app activity (credits earned, friends, groups, trees added to your account). Without these we cannot run your account. If you do not want us to hold this data, you can delete your account at any time (see Section 9).
+
+      <div class="subheading">Automatic beta data (cannot be switched off)</div>
+      While you use a TestFlight beta, Apple automatically collects crash logs and usage data and shares them with us. This is part of how TestFlight works, and it cannot be turned off. You can stop it by deleting the beta app from your device.
+
+      <div class="subheading">Optional: your choice, and off until you switch it on</div>
       <ul>
-        <li>Your name, email address, and in-app activity (credits earned, friends, groups, trees added to your account)</li>
-        <li>If you grant permission, your daily step count from Apple Health — used only to check whether you've reached a daily walking threshold. The actual step number is never stored, only whether you met the threshold that day. This data is never used for advertising and is never sold. You can revoke this permission at any time in your iOS Settings without losing access to the rest of the app.</li>
-        <li>If you choose to link a card, we store a record of whether a card is linked, and any test-mode transaction amounts generated during this testing phase — no real money or real purchases are involved. Right now, this feature is in test mode only, using our card-linking provider's sandbox environment. As Rooted develops, we intend to connect with card-linked offers and/or Open Banking providers, always with your explicit consent, to detect real purchases at participating merchants. We'll update this document and notify testers directly before any real transaction data collection begins.</li>
+        <li>Apple Health steps. Only if you allow it. You can turn it off at any time in iOS Settings, and the rest of the app keeps working.</li>
+        <li>Linking a card. Only if you tap "Link card". Otherwise nothing is linked. This is currently test mode only (see Section 8).</li>
+        <li>Feedback. Only if you choose to send it, for example through TestFlight.</li>
+        <li>Updates from us. Only if you tick the box. You can unsubscribe from any email, or ask us to stop.</li>
       </ul>
-      We process your data on the basis of your consent. You can withdraw this consent at any time by requesting deletion of your account.
-      <br><br>
-      We retain your data for as long as your account remains active, and delete it within 30 days of a valid deletion request.
-      <br><br>
-      Your data is confidential, is never sold, and is not shared with third parties beyond what's needed to operate the app (e.g. our database provider, Supabase, hosted in London, UK, and our card-linking infrastructure provider).
     </div>
   </div>
 
@@ -317,11 +348,27 @@
 
   <div class="section">
     <div class="section-number">8</div>
-    <div class="section-title">Your rights</div>
+    <div class="section-title">Your data: what we collect, why, and who handles it</div>
     <div class="section-body">
-      You can stop using Rooted and request deletion of your account and data at any time, without needing a reason. This does not affect data already processed prior to your request. Under UK GDPR, you also have the right to access or correct your data.
+      <div class="subheading">What we collect and why</div>
+      <ul>
+        <li>Your name and email address, to create and secure your account and to contact you about the test.</li>
+        <li>Your in-app activity, to run the app, work out your credits and show you your progress.</li>
+        <li>Your daily step count from Apple Health, if you allow it. We use it only to check whether you have reached a daily walking threshold. The step number itself is never stored, only whether you met the threshold that day. This data is never used for advertising and is never sold.</li>
+        <li>Card linking, if you choose it. We store a record that a card is linked, and any test-mode transaction amounts. This feature is in test mode only, using our card-linking provider's sandbox, so no real card, money or purchase is involved. As Rooted develops, we intend to connect with card-linked offers and/or Open Banking providers, always with your explicit consent, to detect real purchases at participating merchants. We will update this document and tell testers directly before any real transaction data is collected.</li>
+        <li>Crash logs, usage data and feedback from TestFlight, which may include information about your device and any screenshots you attach. Please do not include other people's personal details in screenshots. We use this to fix problems and improve the app, and may contact you about it.</li>
+      </ul>
+      We also use activity data to understand how testers use the app. We may share anonymised, combined figures (such as total users and how many people return) with investors and partners. These figures do not identify you.
       <br><br>
-      If you are unhappy with how we have handled your data, you have the right to lodge a complaint with the UK Information Commissioner's Office (ico.org.uk).
+      We process your data on the basis of your consent, and you can withdraw it at any time (see Section 9).
+
+      <div class="subheading">Who else handles your data</div>
+      <ul>
+        <li>Supabase, our database and login provider. Your account data is stored primarily on servers in London, UK. Supabase and its own service providers may access it from outside the UK, under standard legal safeguards. Supabase handles it only on our instructions, under a data processing agreement.</li>
+        <li>Apple, through TestFlight and Apple Health. Apple handles TestFlight data under its own <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a>. Your Apple Health data stays on your device, and we only receive what is described above.</li>
+        <li>Our card-linking provider, only if you choose to link a card.</li>
+      </ul>
+      We never sell your data, and we do not share it with anyone else except where the law requires.
     </div>
   </div>
 
@@ -329,6 +376,27 @@
 
   <div class="section">
     <div class="section-number">9</div>
+    <div class="section-title">Keeping and deleting your data, and your rights</div>
+    <div class="section-body">
+      We keep your data for as long as your account is active, and delete it within 30 days of a valid deletion request.
+
+      <div class="subheading">How to opt out</div>
+      <ul>
+        <li>Stop step tracking: turn it off in iOS Settings. Nothing else changes.</li>
+        <li>Stop emails: use the unsubscribe link, or ask us.</li>
+        <li>Leave the test: delete the app from your device. This removes what is stored on your phone but does not delete your Rooted account. To delete your account and data, email <a href="mailto:developer@rootedtheapp.com">developer@rootedtheapp.com</a>.</li>
+        <li>Apple's data: Apple keeps its own TestFlight data under its own policy. To ask Apple to delete it, contact Apple directly.</li>
+      </ul>
+      You can withdraw your consent at any time, without giving a reason. This does not affect anything we did before you withdrew. If you withdraw consent for your name, email and activity, we can no longer run your account, so we will delete it.
+      <br><br>
+      Under UK GDPR you also have the right to ask for a copy of your data, to have it corrected or deleted, and to object to or restrict how we use it. If you are unhappy with how we have handled your data, you can complain to the UK Information Commissioner's Office (<a href="https://ico.org.uk/" target="_blank" rel="noopener">ico.org.uk</a>).
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">10</div>
     <div class="section-title">Contact</div>
     <div class="section-body">
       For any questions about this notice or your data:
