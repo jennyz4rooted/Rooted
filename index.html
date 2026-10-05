@@ -504,11 +504,11 @@
     <p class="stats-since">Since June 2026</p>
     <div class="stats-grid">
       <div>
-        <p class="stat-n">16</p>
+        <p class="stat-n" data-stat="testers">28</p>
         <p class="stat-l">Pilot testers</p>
       </div>
       <div>
-        <p class="stat-n">32</p>
+        <p class="stat-n" data-stat="waitlist">38</p>
         <p class="stat-l">On the waitlist</p>
       </div>
     </div>
@@ -587,6 +587,16 @@
   </footer>
 
   <script>
+    // ===== EDIT THESE NUMBERS =====
+    // Single place to update the stats section. The numbers written
+    // inside the HTML are only a fallback if scripts are blocked.
+    const STATS = { testers: 28, waitlist: 38 };
+    document.querySelectorAll('[data-stat]').forEach(function (el) {
+      const value = STATS[el.dataset.stat];
+      if (value !== undefined) el.textContent = value;
+    });
+    // ===== END =====
+
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
     contactForm.addEventListener('submit', async function (e) {
