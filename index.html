@@ -504,11 +504,11 @@
     <p class="stats-since">Since June 2026</p>
     <div class="stats-grid">
       <div>
-        <p class="stat-n" data-stat="testers">28</p>
+        <p class="stat-n" data-stat="testers">37</p>
         <p class="stat-l">Pilot testers</p>
       </div>
       <div>
-        <p class="stat-n" data-stat="waitlist">38</p>
+        <p class="stat-n" data-stat="waitlist">52</p>
         <p class="stat-l">On the waitlist</p>
       </div>
     </div>
@@ -590,7 +590,7 @@
     // ===== EDIT THESE NUMBERS =====
     // Single place to update the stats section. The numbers written
     // inside the HTML are only a fallback if scripts are blocked.
-    const STATS = { testers: 28, waitlist: 38 };
+    const STATS = { testers: 37, waitlist: 52 };
     document.querySelectorAll('[data-stat]').forEach(function (el) {
       const value = STATS[el.dataset.stat];
       if (value !== undefined) el.textContent = value;
