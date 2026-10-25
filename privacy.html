@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rooted — Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4efe6;
+    --dark-green: #1a2e1a;
+    --mid-green: #2d4a2d;
+    --sage: #5a7a5a;
+    --light-sage: #a8bfa8;
+    --warm-white: #faf7f2;
+    --border: rgba(90,122,90,0.2);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--dark-green);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.4;
+  }
+
+  header {
+    border-bottom: 0.5px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.15em;
+    color: var(--mid-green);
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .doc-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .doc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    line-height: 1.25;
+    color: var(--dark-green);
+    margin-bottom: 0.75rem;
+  }
+
+  .doc-meta {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-sage);
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section:nth-child(5) { animation-delay: 0.5s; }
+  .section:nth-child(6) { animation-delay: 0.6s; }
+  .section:nth-child(7) { animation-delay: 0.7s; }
+  .section:nth-child(8) { animation-delay: 0.8s; }
+
+  .section-number {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--light-sage);
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    color: var(--mid-green);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .section-body {
+    font-size: 14.5px;
+    color: #3a4a3a;
+    line-height: 1.85;
+  }
+
+  .section-body ul {
+    list-style: none;
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .section-body ul li {
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .section-body ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--light-sage);
+    font-weight: 300;
+  }
+
+  .section-body strong {
+    font-weight: 400;
+    color: var(--dark-green);
+  }
+
+  .section-body a {
+    color: var(--mid-green);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--light-sage);
+  }
+
+  .section-body a:hover {
+    border-bottom-color: var(--mid-green);
+  }
+
+  .subheading {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--dark-green);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-body > .subheading:first-child {
+    margin-top: 0;
+  }
+
+  .divider {
+    width: 32px;
+    height: 0.75px;
+    background: var(--light-sage);
+    margin: 2.5rem 0;
+  }
+
+  .contact-block {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .contact-block p {
+    font-size: 14px;
+    color: var(--sage);
+    line-height: 1.9;
+  }
+
+  .contact-block a {
+    color: var(--mid-green);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--light-sage);
+  }
+
+  .contact-block a:hover {
+    border-bottom-color: var(--mid-green);
+  }
+
+  .highlight-box {
+    background: rgba(168, 191, 168, 0.15);
+    border-left: 2px solid var(--light-sage);
+    padding: 1rem 1.25rem;
+    margin-top: 0.75rem;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    color: var(--sage);
+    font-style: italic;
+  }
+
+  footer {
+    border-top: 0.5px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  footer a {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--sage);
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: var(--mid-green);
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 2.5rem 1.25rem 4rem; }
+    header { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="wordmark" href="/">Rooted</a>
+</header>
+
+<div class="page">
+
+  <div class="doc-header">
+    <h1 class="doc-title">Privacy Policy</h1>
+    <p class="doc-meta">Rooted · Last updated October 2026</p>
+  </div>
+
+  <div class="section">
+    <div class="section-number">1</div>
+    <div class="section-title">Who we are</div>
+    <div class="section-body">
+      Rooted is a product of Rooted Technology Ltd, a company registered in England and Wales (company number 17273832). We are the controller of the personal data described in this policy. Rooted is for people aged 18 and over.
+      <br><br>
+      Questions about your data: <a href="mailto:developer@rootedtheapp.com">developer@rootedtheapp.com</a>.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">2</div>
+    <div class="section-title">What we collect, and why</div>
+    <div class="section-body">
+      <div class="subheading">Needed to run your account</div>
+      <ul>
+        <li><strong>Name and email address</strong>, to create and secure your account, send account emails such as password reset codes, and contact you about Rooted.</li>
+        <li><strong>Your activity in the app</strong>: your credits ("g"), daily check-ins, friends, groups, the trees you plant and the messages you receive. We use it to run the app and show you your progress.</li>
+        <li><strong>Your referral code and who invited you</strong>, so friends can find each other.</li>
+      </ul>
+
+      <div class="subheading">Only if you choose it</div>
+      <ul>
+        <li><strong>Apple Health steps.</strong> If you connect Apple Health, we read only your step count for the previous day, to check whether you reached the daily walking threshold. We store only whether you met it, never the step number itself. You can turn this off at any time in iOS Settings. This data is never used for advertising and is never sold.</li>
+        <li><strong>Shop &amp; Earn.</strong> When you tap Activate Now we create a personal discount code for the Luminiare online store and open the store with a link that carries a random reference for your account. When an order is paid with your code or through that link, the store tells us the order number and the amount (not your delivery address, payment details or the items), so we can add credits to your account. If we cannot match an order to anyone, we keep only the order number and amount.</li>
+        <li><strong>Our interest list.</strong> If you tap "Yes, keep me posted" under Tap and grow, we record that choice with the date and use your account email to contact you about it.</li>
+        <li><strong>Nominating a local hero.</strong> The nomination form is hosted by Tally. Anything you enter there is handled by Tally under its own privacy policy.</li>
+        <li><strong>Notifications.</strong> If you allow notifications, we save your phone's notification address and send you a notification when a Shop &amp; Earn reward arrives, and when a friend waters your tree if you have not opened Rooted for a week. You can turn them off at any time in iOS Settings.</li>
+        <li><strong>Updates about Rooted.</strong> If you tick the optional box when signing up, we may email you news about Rooted. You can ask us to stop at any time.</li>
+      </ul>
+
+      <div class="subheading">Collected automatically</div>
+      <ul>
+        <li><strong>Basic usage events</strong>, such as that you viewed the home screen, collected bubbles, added or removed a friend, watered a tree or planted a tree. These are linked to a random account ID, not your name or email, and we do not record your screen. We use them to understand how people use the app and to improve it.</li>
+        <li><strong>When you last opened the app.</strong> We record the time, to decide whether a notification is worthwhile.</li>
+        <li><strong>Apple's reporting.</strong> Apple may share crash logs and usage statistics with us through App Store Connect and TestFlight, under its own privacy policy. We do not use advertising identifiers and we do not track you across other companies' apps or websites.</li>
+      </ul>
+
+      We may share anonymised, combined figures (such as total users and how many people return) with investors and partners. These figures do not identify you.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">3</div>
+    <div class="section-title">Our legal basis</div>
+    <div class="section-body">
+      We process your data on the basis of your consent, which you give when you create an account and when you switch on an optional feature, and because we need it to run the account you asked for. You can withdraw your consent at any time (see Section 6).
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">4</div>
+    <div class="section-title">Who else handles your data</div>
+    <div class="section-body">
+      We never sell your data, and we share it only with these providers, who handle it on our behalf:
+      <ul>
+        <li><strong>Supabase</strong>, our database and login provider. Your account data is stored primarily on servers in London, UK.</li>
+        <li><strong>PostHog</strong>, our product analytics provider, which receives the usage events described above on its EU servers.</li>
+        <li><strong>Resend</strong>, our email provider, which receives your email address only to deliver account emails.</li>
+        <li><strong>Shopify</strong>, which runs the Luminiare online store. It receives the discount code we create for you and the reference in the link. When you shop there, the store's own privacy policy applies to what you give it.</li>
+        <li><strong>Expo</strong>, which relays notifications to your phone. It receives your phone's notification address and the text of the notification.</li>
+        <li><strong>Apple</strong>, through the App Store and Apple Health. Your Apple Health data stays on your device, and we receive only what is described above.</li>
+      </ul>
+      Some of these providers, or their own service providers, may handle data outside the UK, under standard legal safeguards. We may also disclose data where the law requires it.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">5</div>
+    <div class="section-title">How long we keep it</div>
+    <div class="section-body">
+      We keep your data for as long as your account is active. If you delete your account, we delete your profile, credits, friendships, activity and messages straight away. Trees that have already been planted remain on record, but are no longer linked to you. Copies held in provider backups are removed within 30 days.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">6</div>
+    <div class="section-title">Your rights and choices</div>
+    <div class="section-body">
+      <ul>
+        <li><strong>Delete your account.</strong> In the app, go to Account and tap Delete account. It takes effect immediately.</li>
+        <li><strong>Stop step tracking.</strong> Turn it off in iOS Settings, under Health, Data Access &amp; Devices, then Rooted.</li>
+        <li><strong>Stop emails about Rooted.</strong> Email us and we will stop them.</li>
+        <li><strong>Other rights.</strong> Under UK GDPR you can ask for a copy of your data, to have it corrected or deleted, and to object to or restrict how we use it. Email us and we will respond within one month.</li>
+      </ul>
+      If you are unhappy with how we have handled your data, you can complain to the UK Information Commissioner's Office (<a href="https://ico.org.uk/" target="_blank" rel="noopener">ico.org.uk</a>).
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">7</div>
+    <div class="section-title">Changes to this policy</div>
+    <div class="section-body">
+      If we change how we use your data, we will update this page and the date at the top, and tell you in the app or by email where the change is significant.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-number">8</div>
+    <div class="section-title">Contact</div>
+    <div class="section-body">
+      <div class="contact-block">
+        <p>
+          Jenny Yiqing Zhao<br>
+          Rooted Technology Ltd<br>
+          London, UK<br>
+          <a href="mailto:developer@rootedtheapp.com">developer@rootedtheapp.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="/">← Back to Rooted</a>
+</footer>
+
+</body>
+</html>
