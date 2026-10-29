@@ -229,6 +229,11 @@
       text-transform: uppercase;
       opacity: 0.5;
     }
+    .stats-note {
+      font-size: 12px;
+      opacity: 0.5;
+      margin-top: 24px;
+    }
     .stats-ig {
       margin-top: 64px;
       padding-top: 48px;
@@ -476,7 +481,7 @@
       <div class="how-card">
         <span class="how-glyph">🚶</span>
         <h3 class="how-name">Move</h3>
-        <p class="how-desc">TfL taps and walking earn credits that go toward planting a real, geolocated tree. Every journey counts.</p>
+        <p class="how-desc">Daily check-ins and walking earn credits that go toward planting a real, geolocated tree. Every journey counts.</p>
       </div>
       <div class="how-card">
         <span class="how-glyph">🛍</span>
@@ -499,19 +504,20 @@
 
   <!-- STATS -->
   <section class="stats">
-    <p class="eyebrow">Pilot — London</p>
+    <p class="eyebrow">UK pilot</p>
     <h2 class="section-h2">Rooted is live.</h2>
-    <p class="stats-since">Since June 2026</p>
+    <p class="stats-since">Since September 2026</p>
     <div class="stats-grid">
       <div>
-        <p class="stat-n" data-stat="testers">37</p>
-        <p class="stat-l">Pilot testers</p>
+        <p class="stat-n" data-stat="testers">53</p>
+        <p class="stat-l">Users</p>
       </div>
       <div>
-        <p class="stat-n" data-stat="waitlist">52</p>
+        <p class="stat-n" data-stat="waitlist">61</p>
         <p class="stat-l">On the waitlist</p>
       </div>
     </div>
+    <p class="stats-note">The waitlist is for the Android launch.</p>
     <div class="stats-ig">
       <p class="stats-ig-text">I am building Rooted in public. Follow on Instagram to watch the journey, catch me next time I pop up in London, and be part of what this becomes.</p>
       <a class="btn-ig" href="https://www.instagram.com/worldlyrooted/" target="_blank">Follow @worldlyrooted</a>
@@ -583,14 +589,14 @@
   <!-- FOOTER -->
   <footer class="footer">
     <span class="footer-logo">Rooted</span>
-    <div class="footer-info">Rooted Technology Ltd · Incorporated June 2026</div>
+    <div class="footer-info">Rooted Technology Ltd · 2026</div>
   </footer>
 
   <script>
     // ===== EDIT THESE NUMBERS =====
     // Single place to update the stats section. The numbers written
     // inside the HTML are only a fallback if scripts are blocked.
-    const STATS = { testers: 37, waitlist: 52 };
+    const STATS = { testers: 53, waitlist: 61 };
     document.querySelectorAll('[data-stat]').forEach(function (el) {
       const value = STATS[el.dataset.stat];
       if (value !== undefined) el.textContent = value;
