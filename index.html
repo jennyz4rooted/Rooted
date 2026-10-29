@@ -50,6 +50,9 @@
       font-size: 22px;
       letter-spacing: 0.03em;
     }
+    /* Keep the lowercase i in "iOS" inside uppercase buttons */
+    .ios { text-transform: none; }
+
     .nav-link {
       font-size: 12px;
       letter-spacing: 0.15em;
@@ -458,7 +461,7 @@
   <!-- NAV -->
   <nav class="nav">
     <span class="nav-logo">Rooted</span>
-    <a class="nav-link" href="https://rooted-plum.vercel.app/app.html" target="_blank">Try iOS app →</a>
+    <a class="nav-link" href="https://rooted-plum.vercel.app/app.html" target="_blank">Try <span class="ios">iOS</span> app →</a>
   </nav>
 
   <!-- HERO -->
@@ -467,7 +470,7 @@
     <h1 class="hero-h1">Your being, rooted in worldly places.</h1>
     <p class="hero-sub">Your daily journeys, walking, and conscious spending grow a real, geolocated tree.</p>
     <div class="hero-actions">
-      <a class="btn-dark" href="https://rooted-plum.vercel.app/app.html" target="_blank">Try iOS app</a>
+      <a class="btn-dark" href="https://rooted-plum.vercel.app/app.html" target="_blank">Try <span class="ios">iOS</span> app</a>
       <a class="btn-outline" href="https://tally.so/r/lbMQVv" target="_blank">Join waitlist</a>
       <a class="btn-outline" href="https://www.youtube.com/shorts/ktAss8c38K4" target="_blank">Watch demo</a>
     </div>
