@@ -327,7 +327,7 @@
     <div class="section-title">Your choices</div>
     <div class="section-body">
       <div class="subheading">Required to use Rooted</div>
-      Your name, email address and in-app activity (credits earned, friends, groups, trees added to your account). Without these we cannot run your account. If you do not want us to hold this data, you can delete your account at any time (see Section 9).
+      Your name, email address and in-app activity (credits earned, friends, groups, trees added to your account, daily game guesses and streak). Without these we cannot run your account. If you do not want us to hold this data, you can delete your account at any time (see Section 9).
 
       <div class="subheading">Automatic beta data (cannot be switched off)</div>
       While you use a TestFlight beta, Apple automatically collects crash logs and usage data and shares them with us. This is part of how TestFlight works, and it cannot be turned off. You can stop it by deleting the beta app from your device.
@@ -335,8 +335,8 @@
       <div class="subheading">Optional: your choice, and off until you switch it on</div>
       <ul>
         <li>Apple Health steps. Only if you allow it. You can turn it off at any time in iOS Settings, and the rest of the app keeps working.</li>
-        <li>Shop &amp; Earn. Only if you tap "Activate Now" and then buy from the Luminiare online store. Otherwise nothing is shared with the store (see Section 8).</li>
-        <li>Our interest list. Only if you tap "Yes, keep me posted" under Tap and grow. Otherwise you are not on it.</li>
+        <li>Shop &amp; Earn. Only if you tap the shop button and then buy from the Luminiare online store. Otherwise nothing is shared with the store (see Section 8).</li>
+        <li>Our interest list. Only if you tap "Join waitlist" in the Tap and grow pop-up. Otherwise you are not on it.</li>
         <li>Notifications. Only if you allow them. You can turn them off at any time in iOS Settings.</li>
         <li>Feedback. Only if you choose to send it, for example through TestFlight.</li>
       </ul>
@@ -354,11 +354,12 @@
         <li>Your name and email address, to create and secure your account and to contact you about the test.</li>
         <li>Your in-app activity, to run the app, work out your credits and show you your progress.</li>
         <li>Your daily step count from Apple Health, if you allow it. We use it only to check whether you have reached a daily walking threshold. The step number itself is never stored, only whether you met the threshold that day. This data is never used for advertising and is never sold.</li>
-        <li>Shop &amp; Earn, if you choose it. When you tap "Activate Now" we create a personal discount code for the Luminiare online store and open the store with a link that carries a random reference for your account. When an order is paid with your code or through that link, the store tells us the order number and the amount (not your delivery address, payment details or the items), so we can add credits to your account. If we cannot match an order to anyone, we keep only the order number and amount.</li>
+        <li>Shop &amp; Earn, if you choose it. When you tap the shop button we open the Luminiare online store (luminiare.com, run by the founder of Rooted) with a link that carries a random reference for your account. If you place an order there, your order email includes that reference, and we use it, together with the order amount, to add g to your account by hand. We do not receive your payment details, and we do not use your delivery address or the items you bought to add g. If you do not order, nothing more is shared.</li>
+        <li>Your game play. When you play the daily game we record your guesses, whether you found the city, and your streak (the number of days in a row you have played, counted by your phone's date). We use it to run the game, award g and show your streak. It is deleted with your account.</li>
         <li>Notifications, if you allow them. We save your phone's notification address and send a notification when a Shop &amp; Earn reward arrives, and when a friend waters your tree if you have not opened Rooted for a week. We also record when you last opened the app, to decide whether a notification is worthwhile.</li>
-        <li>Our interest list, if you choose it. If you tap "Yes, keep me posted" under Tap and grow, we record that choice with the date and use your account email to contact you about it. It is deleted with your account.</li>
+        <li>Our interest list, if you choose it. If you tap "Join waitlist" in the Tap and grow pop-up, we record that choice with the date and use your account email to contact you about it. It is deleted with your account.</li>
         <li>Crash logs, usage data and feedback from TestFlight, which may include information about your device and any screenshots you attach. Please do not include other people's personal details in screenshots. We use this to fix problems and improve the app, and may contact you about it.</li>
-        <li>Basic usage events from inside the app, such as that you viewed the home screen, collected bubbles, added a friend, watered a tree or planted a tree. These are linked to a random account ID, not your name or email, and we do not record your screen. We use them to understand how testers use the app and to improve it. They are deleted along with your account.</li>
+        <li>Basic usage events from inside the app, such as that you viewed the home screen, collected bubbles, added a friend, watered a tree, planted a tree, or made a guess or shared your result in the daily game. These are linked to a random account ID, not your name or email, and we do not record your screen. We use them to understand how testers use the app and to improve it. They are deleted along with your account.</li>
       </ul>
       We also use activity data to understand how testers use the app. We may share anonymised, combined figures (such as total users and how many people return) with investors and partners. These figures do not identify you.
       <br><br>
@@ -371,7 +372,6 @@
         <li>PostHog, our product analytics provider, which receives the usage events described above on its EU servers and handles them on our behalf.</li>
         <li>Expo, which relays notifications to your phone. It receives your phone's notification address and the text of the notification.</li>
         <li>Resend, our email provider, which receives your email address only to deliver account emails such as password reset codes, and handles it on our behalf.</li>
-        <li>Shopify, which runs the Luminiare online store. It receives the discount code we create for you and the reference in the link. When you shop there, the store's own privacy policy applies to what you give it.</li>
       </ul>
       We never sell your data, and we do not share it with anyone else except where the law requires.
     </div>
